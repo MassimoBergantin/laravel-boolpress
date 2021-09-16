@@ -19,4 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('private');
+
+Route::get('/public', 'PagesController@publicSection');
+
+Route::get('/private', 'PagesController@privateSection')->middleware('auth'); // per andare nella pagina privata necessito di essere loggato (controlla la pubblic function su 'PagesController' per capire come funziona) //
+
+Route::resource('posts', 'PostController');
