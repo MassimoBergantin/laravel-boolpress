@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth'); // apre la pagina di login per l'autenticazione, la pagina si chiama 'auth' //
 });
 
 Auth::routes();
