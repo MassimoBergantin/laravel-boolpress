@@ -6,3 +6,24 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+
+
+.posts-container {
+
+    text-align: center;
+
+    table {
+
+        .bi {
+            color: black;
+            cursor: pointer;
+        }
+
+        img {
+            width: 200px;
+        }
+    }
+
+}
