@@ -21,24 +21,27 @@ class PostController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 
+     * Mostra un form vuoto per popolare tutti i dati del nostro modello
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('posts.create');
+
     }
 
     /**
-     * Store a newly created resource in storage.
+     *  
+     *  Riceve tutti i dati del form (dopo il submit) e salvo il nostro oggetto nel database
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

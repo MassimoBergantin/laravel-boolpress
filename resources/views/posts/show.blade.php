@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="posts-container">
-    <h2 style="">{{$post->author}}</h2>
+    <h2 style=""><i style="font-size: 25px" class="bi bi-person-circle"></i> <br> {{$post->author}}</h2>
     <div> 
             <i style="font-size: 25px" class="bi-geo-fill"></i>
             {{$post->location}}
