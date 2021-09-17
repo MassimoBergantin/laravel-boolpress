@@ -28,6 +28,15 @@
                 <input style="border-radius: 50px;" type="text" class="form-control" name="image" id="image" placeholder="Upload your pic here!">
             </div>
 
+            <br>
+            <hr>
+            <br>
+
+            <div class="form-group">
+                <!--<input type="submit" value="Salva">-->
+                <button type="submit" class="btn btn-primary">Pubblica Post</button>
+            </div>
+
         </div>
 
 
