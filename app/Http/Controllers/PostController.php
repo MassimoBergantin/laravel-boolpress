@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Posts;
 use App\Post;
+use Posts;
 
 class PostController extends Controller
 {
@@ -15,9 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $Posts = Post::all();
+        $posts = Post::all();
 
-        return view('posts.index', compact('Posts'));
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -41,7 +41,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $request->validate([
+            'image' => 'url'
+        ]);
+
+        $data = $request->all();
+
+        $post = new Post();
+
+        $this->fillAndSavePost($post, $data);
+         // viene salvato nel DB
+
+        return redirect()->route('posts.show', $post->id);
+
     }
 
     /**
@@ -63,9 +75,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+          return view('posts.edit', compact('post'));
     }
 
     /**
@@ -75,9 +87,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $data = $request->all();
+
+        $this->fillAndSavePost($post, $data);
+
+        return redirect()->route('posts.show', $post);
     }
 
     /**
@@ -90,4 +106,14 @@ class PostController extends Controller
     {
         //
     }
+
+    private function fillAndSavePost(Post $post, $data) {
+        $post->author = $data['author'];
+        $post->location = $data['location'];
+        $post->textpost = $data['textpost'];
+        $post->image = $data['image'];
+        $post->save();
+    }
 }
+
+

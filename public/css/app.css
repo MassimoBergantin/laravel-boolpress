@@ -12345,3 +12345,7 @@ a.text-dark:focus {
   width: 200px;
 }
 
+.alert {
+  font-family: monospace;
+}
+

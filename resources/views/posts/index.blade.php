@@ -2,44 +2,59 @@
 
 @section('content')
 
-<div class="posts-container">
-    <table class="table table-striped">
-        <thead>
-          <tr>
-    
-            <th scope="col">#</th>
-            <th scope="col"><i class="bi bi-person-circle"></i> <br> AUTHOR</th>
-            <th scope="col"><i class="bi bi-geo-fill"></i>LOCATION</th>
-            <th scope="col"><i class="bi bi-file-earmark-post"></i> <br> POST CONTENT</th>
-            <th scope="col"><i class="bi bi-image-fill"></i> <br> IMAGE</th>
-            <th scope="col"><i class="bi bi-info-circle-fill"></i> <br> INFO</th>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="resor">
 
-    
-          </tr>
-    
-        </thead>
-    
-        <tbody>
-    
-            @foreach($Posts as $post)
-    
-                <tr>
-    
-                    <th scope="row">{{$post->id}}</th>
-                    <td>{{$post->author}}</td>
-                    <td>{{$post->location}}</td>
-                    <td>{{$post->textpost}}</td>
-                    <td><img src="{{$post->image}}" alt="" /></td>
-                    <td><a href="{{ route('posts.show', $post) }}"><i class="bi bi-zoom-in"></i></a></td>
+    <title>Document</title>
+</head>
+  
 
+<body>
+    <div class="posts-container container">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+        
+                <th scope="col">#</th>
+                <th scope="col"><i class="bi bi-person-circle"></i> <br> AUTHOR</th>
+                <th scope="col"><i class="bi bi-geo-fill"> <br> </i>LOCATION</th>
+                <th scope="col"><i class="bi bi-file-earmark-post"></i> <br> POST CONTENT</th>
+                <th scope="col"><i class="bi bi-image-fill"></i> <br> IMAGE</th>
+                <th scope="col"><i class="bi bi-info-circle-fill"></i> <br> INFO</th>
     
-                </tr>
+        
+              </tr>
+        
+            </thead>
+        
+            <tbody>
+        
+                @foreach($posts as $post)
+        
+                    <tr>
+        
+                        <th  style="padding-top: 100px; font-size: 16px" scope="row"><b>{{$post->id}}</b></th>
+                        <td  style="padding-top: 100px; font-size: 16px">{{$post->author}}</td>
+                        <td  style="padding-top: 100px; font-size: 16px">{{$post->location}}</td>
+                        <td  style="padding-top: 65px">{{$post->textpost}}</td>
+                        <td><img style="border-radius: 150px;" src="{{$post->image}}" alt="" /></td>
+                        <td style="padding-top: 100px"><a href="{{ route('posts.show', $post) }}"><i style="font-size: 15px" class="bi bi-zoom-in"></i></a></td>
     
-            @endforeach
-    
-        </tbody>
-    
-      </table>
-</div>
+        
+                    </tr>
+        
+                @endforeach
+        
+            </tbody>
+        
+          </table>
+    </div>
+</body>
+</html>
     
 @endsection
