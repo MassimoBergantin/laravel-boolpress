@@ -55,11 +55,10 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <form style="" action="{{ route('posts.destroy', $post) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger" data-toggle= "modal" data-target="#exampleModal"><i class="bi bi-trash"></i></button>
+                    <button type="submit" class="btn btn-danger" data-toggle= "modal" data-target="#exampleModal"><span>Yes, I want delete this post</span></button>
                 </form>            
             </div>
         </div>
