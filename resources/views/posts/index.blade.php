@@ -15,13 +15,16 @@
   
 
 <body>
+    <div class="container">
+
+        <form>
+            <a  href="{{route('posts.create')}}" method=""  class="btn btn-primary"><i style="padding-right: 10px" class="bi bi-plus-square"></i> CREATE A NEW POST</a>    
+        </form>
+
+    </div>
 
     <div class="posts-container container">
-
-        {{-- <form href="{{route('posts.create', $post) }}" method="" >
-            <button class="btn btn-primary"><i class="bi bi-stickies"></i></button>    
-        </form> --}}
-
+        <br>
         <table class="table table-striped">
             <thead>
               <tr>
