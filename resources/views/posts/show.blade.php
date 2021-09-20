@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+<div style="text-align: center;" class="container">
+
+
+    <a href="{{ route('posts.index', $post) }}">
+        <button class="btn btn-primary"><i class="bi bi-stickies"></i></button>    
+    </a>
+    <br>
+    <span>GO TO POSTS</span>
+
+
+</div>
+<br>
 <div style="border: 2px solid lightgrey" class="posts-container container">
     <div style="padding: 50px">
 
@@ -16,6 +28,30 @@
         <div style="padding: 25px; border: 1px solid lightgrey; font-size: 16px">{{$post->textpost}}</div>
 
     </div>
+</div>
+<br>
+<div style="float: right" class="container col-5">
+
+
+    <a style="" action="{{ route('posts.destroy', $post) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+    </a>
+
+    <span>DELETE</span>
+
+
+</div>
+<div  style="float: right"  class="container col-3">
+
+    <a href="{{ route('posts.edit', $post) }}">
+        <button class="btn btn-success"><i class="bi bi-pencil-square"></i></button>    
+    </a>
+ 
+    <span> EDIT</span>
+
+
 </div>
     
 @endsection

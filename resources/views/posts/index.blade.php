@@ -25,7 +25,7 @@
                 <th scope="col"><i class="bi bi-geo-fill"> <br> </i>LOCATION</th>
                 <th scope="col"><i class="bi bi-file-earmark-post"></i> <br> POST CONTENT</th>
                 <th scope="col"><i class="bi bi-image-fill"></i> <br> IMAGE</th>
-                <th scope="col"><i class="bi bi-info-circle-fill"></i> <br> INFO</th>
+                <th scope="col"><i class="bi bi-info-circle-fill"></i> <br> ACTIONS</th>
     
         
               </tr>
@@ -43,7 +43,13 @@
                         <td  style="padding-top: 100px; font-size: 16px">{{$post->location}}</td>
                         <td  style="padding-top: 65px">{{$post->textpost}}</td>
                         <td><img style="border-radius: 150px;" src="{{$post->image}}" alt="" /></td>
-                        <td style="padding-top: 100px"><a href="{{ route('posts.show', $post) }}"><i style="font-size: 15px" class="bi bi-zoom-in"></i></a></td>
+                        <td style="padding-top: 100px" class="">
+                            <a href="{{ route('posts.show', $post) }}"><button class="btn btn-info"><i class="bi bi-zoom-in"></i></button></a>
+                            <br>
+                        </td>    
+                        
+ 
+
     
         
                     </tr>
