@@ -6,10 +6,9 @@
 
 
     <a href="{{ route('posts.index', $post) }}">
-        <button class="btn btn-primary"><i class="bi bi-stickies"></i></button>    
+        <button class="btn btn-primary"><i class="bi bi-stickies"></i> ALL POSTS</button>    
     </a>
-
-    <span>GO TO POSTS</span>
+    <br>
 
 
 </div>

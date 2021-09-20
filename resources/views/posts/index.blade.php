@@ -15,7 +15,13 @@
   
 
 <body>
+
     <div class="posts-container container">
+
+        {{-- <form href="{{route('posts.create', $post) }}" method="" >
+            <button class="btn btn-primary"><i class="bi bi-stickies"></i></button>    
+        </form> --}}
+
         <table class="table table-striped">
             <thead>
               <tr>
