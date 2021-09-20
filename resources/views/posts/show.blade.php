@@ -32,14 +32,40 @@
 <br>
 <div style="float: right" class="container col-5">
 
+        <button type="submit" class="btn btn-danger" data-toggle= "modal" data-target="#exampleModal"><i class="bi bi-trash"></i></button>
 
-    <a style="" action="{{ route('posts.destroy', $post) }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
-    </a>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div  style="text-align: center"  class="modal-body">
+                <h4>
+                    Are you sure you want to delete this post?
+                </h4>
+                <h3>
+                    This action is irreversible!
+                </h3>
 
-    <span>DELETE</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <form style="" action="{{ route('posts.destroy', $post) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger" data-toggle= "modal" data-target="#exampleModal"><i class="bi bi-trash"></i></button>
+                </form>            
+            </div>
+        </div>
+        </div>
+    </div>
+
 
 
 </div>
@@ -49,7 +75,6 @@
         <button class="btn btn-success"><i class="bi bi-pencil-square"></i></button>    
     </a>
  
-    <span> EDIT</span>
 
 
 </div>

@@ -2,7 +2,19 @@
 
 @section('content')
 
+<div class="container">
 
+
+    <a href="{{ route('posts.index', $post) }}">
+        <button class="btn btn-primary"><i class="bi bi-stickies"></i></button>    
+    </a>
+
+    <span>GO TO POSTS</span>
+
+
+</div>
+
+<br>
 
 <div  class="posts-container">
 
