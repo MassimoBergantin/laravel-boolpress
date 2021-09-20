@@ -44,6 +44,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
+            
             </div>
             <div  style="text-align: center"  class="modal-body">
                 <h4>
